@@ -1,0 +1,32 @@
+import random
+
+print("random number guessing range")
+top_of_range = input("type a number:")
+if top_of_range.isdigit():
+    top_of_range = int(top_of_range)
+    print('good number ...')
+else:
+    top_of_range = input("Enter in a number greater than o ")
+    if top_of_range.isdigit():
+        top_of_range = int(top_of_range)
+    else:
+        print("you failed at entering a number")
+        quit()
+
+r = random.randint(1,top_of_range)
+guesses = 0
+while True:
+    guesses += 1
+    user_guess = input("make a guess :")
+    if user_guess.isdigit():
+        user_guess = int(user_guess)
+    else:
+        print("Please type a number next time")
+        continue
+    if user_guess == r:
+        print(f"nailed it! only took {guesses} guesses to get it")
+        break
+    elif user_guess > r:
+        print("lower")
+    else:
+        print("higher")
