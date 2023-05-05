@@ -1,0 +1,40 @@
+title = "...Choose your own adventure...by Rocky"
+print(" \n \n ")
+print(title.center(150))
+name = input("type your name: ")
+welcome = "...welcome to the adventure..."
+print(welcome.center(150))
+
+anwser = input("You can go Left or Right?").lower()
+if anwser == "left":
+    anwser = input("You come to a river, Walk around or Ford?").lower()
+    if anwser == "walk":
+        anwser = input("A bear taking a drink shows up, slurps some water then mauls you to death...").lower()
+        quit()
+    elif anwser == "ford":
+        anwser = input("after taking off your shoes and pants then venture into the river. Its cold to "
+                       "the touch and while you are in the middle of the river a eagle swoops down and \n "
+                       "snatches your pants from your hands. The rest of the crossing was uneventful. "
+                       "However once on the other side you notice tiny cannibal eyeing you up. Run or Fight?").lower()
+        if anwser == "fight":
+            print("Grabing the nearest branch you face off against your tiny opponet.... however cannibals travel in packs "
+                  "and this guys friends are in the tree above you with a net.\n Only problem is you found this out after it was"
+                  " dropped entangling you. \n The tiny cannibals cheer as they dance around your pinned body...is that a fork"
+                  " and knife? \n looks like it is dinner time for your new friends and you are the main course...")
+        else:
+            print("HELL NO, tiny dudes always have some kind of trick. Looking around you spot more of the little buggers and "
+                  "decide your shoe will make a good cannibal swatting device\n....After 1 smack the cannibal runs away (although "
+                  "it did take awhile, he was tiny after all.\n Following the river you are led to a small meadow with all the diet "
+                  "doctor pepper you want")
+            quit()
+
+
+    else:
+        print("Not a valid option")
+        quit()
+
+elif anwser == "right":
+    print("Right! turning right you see a Troll, he has a big club, so you dive into the river and float away to Miami")
+
+else:
+    print("Not a valid option")
