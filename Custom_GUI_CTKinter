@@ -1,0 +1,41 @@
+import customtkinter
+
+customtkinter.set_appearance_mode("dark")
+customtkinter.set_default_color_theme("dark-blue")
+
+root = customtkinter.CTk()
+root.geometry("500x450")
+
+def login():
+    print("test")
+
+frame = customtkinter.CTkFrame(master=root)
+frame.pack(pady=20, padx=60, fill="both", expand=True)
+
+label = customtkinter.CTkLabel(master=frame, text="login system")
+label.pack(pady=12, padx=10)
+
+entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="username")
+entry1.pack(pady=12, padx=10)
+
+entry2 = customtkinter.CTkEntry(master=frame, placeholder_text="password", show="*")
+entry2.pack(pady=12, padx=10)
+
+button = customtkinter.CTkButton(master=frame, text="login", command=login)
+button.pack(pady=12, padx=10)
+
+checkbox = customtkinter.CTkCheckBox(master=frame, text="remember me")
+checkbox.pack(pady=12, padx=10)
+
+optionsmenu1 = customtkinter.CTkComboBox(master=frame, values=["option 1", "option 2", "option 3"])
+optionsmenu1.pack(pady=12, padx=10)
+optionsmenu1.set("CustomComboBox")
+
+optionsmenu2 = customtkinter.CTkOptionMenu(master=frame, dynamic_resizing=False,
+                                           values=["value1", "value2","value3","value4"])
+optionsmenu2.pack(pady=12, padx=15)
+optionsmenu2.set("Custom Options Menu")
+
+root.mainloop()
+
+
