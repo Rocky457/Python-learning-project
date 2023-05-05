@@ -1,0 +1,56 @@
+import random as rand
+user_wins = 0
+computer_wins = 0
+
+print("...Rock Paper Scissors game...")
+print("     (press q to quit)")
+
+while True:
+    user_input = input("Type: Rock   Paper   Scissors  ?").lower()
+    computer_input = rand.randint(1,3)
+
+    if computer_input == 1:
+        computer_input_display = "Rock"
+    elif computer_input == 2:
+        computer_input_display = "Paper"
+    else:
+        computer_input_display = "Scissors"
+
+    print(f"\n    User plays ({user_input}) \n          Vs.     \n    Computers  ({computer_input_display})\n ")
+    if user_input == "rock" and computer_input == 1: #rock vs rock
+        print("    TIE")
+    elif user_input == "rock" and computer_input == 2: #rock vs paper
+        computer_wins += 1
+        print("    computer wins")
+    elif user_input == "rock" and computer_input == 3: #rock vs scissors
+        user_wins += 1
+        print("    user wins")
+    elif user_input == "paper" and computer_input == 1: #paper vs rock
+        user_wins += 1
+        print("    user wins")
+    elif user_input == "paper" and computer_input == 2: #paper vs paper
+        print("    TIE")
+    elif user_input == "paper" and computer_input == 3: #papver vs scissors
+        computer_wins += 1
+        print("    computer wins")
+    elif user_input == "scissors" and computer_input == 1: #scissors vs rock
+        computer_wins +=1
+        print("    computer wins")
+    elif user_input == "scissors" and computer_input == 2: #scissors vs paper
+        user_wins += 1
+        print("    user wins")
+    elif user_input == "scissors" and computer_input == 3: #scissors vs scissors
+        print("    Tie")
+    elif user_input == "q":
+        print(f"    User score: {user_wins}, Computer score: {computer_wins}")
+        if user_wins > computer_wins:
+            print("    you won")
+        elif user_wins < computer_wins:
+            print("    computer wins")
+        else:
+            print("tie score")
+        break
+    else:
+        print("not valid entry...")
+        continue
+print("END GAME")
